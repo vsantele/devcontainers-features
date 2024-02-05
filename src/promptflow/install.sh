@@ -19,7 +19,7 @@ fi
 get_latest_version_pip()
 {
     local package_name=$1
-    echo $(python3 -c "import requests; print(requests.get('https://pypi.org/pypi/${package_name}/json').json()['info']['version'])")
+    echo $(curl -s "https://pypi.org/pypi/${package_name}/json" | grep -oE '"version": ?"[^"]+"' | cut -d'"' -f4)
 }
 
 # Check if python version is greater than 3.8
