@@ -45,9 +45,9 @@ fi
 
 # Install promptflow
 if [ "$PROMPTFLOW_EXTRA_PACKAGES" = "" || "$PROMPTFLOW_EXTRA_PACKAGES" = "none" ]; then
-    pip --user install promptflow==$PROMPTFLOW_VERSION
+    pip install --user promptflow==$PROMPTFLOW_VERSION
 else
-    pip --user install promptflow[$PROMPTFLOW_EXTRA_PACKAGES]==$PROMPTFLOW_VERSION
+    pip install --user promptflow[$PROMPTFLOW_EXTRA_PACKAGES]==$PROMPTFLOW_VERSION
 fi
 
 # Install promptflow-tools
@@ -56,11 +56,11 @@ python3 -m pip install promptflow-tools==$PROMPTFLOW_TOOLS_VERION
 # Install vectordb
 if [ "$WITH_VECTORDB" = "true" ]; then
     if [ "$PROMPTFLOW_EXTRA_PACKAGES" = "azure"]; then
-        pip --user install vectordb[azure]==$PROMPTFLOW_VECTORDB_VERSION
+        pip install --user vectordb[azure]==$PROMPTFLOW_VECTORDB_VERSION
     else
-        pip --user install vectordb==$PROMPTFLOW_VECTORDB_VERSION
+        pip install --user vectordb==$PROMPTFLOW_VECTORDB_VERSION
     fi
-    pip --user install vectordb==$PROMPTFLOW_VECTORDB_VERSION
+    pip install --user vectordb==$PROMPTFLOW_VECTORDB_VERSION
 fi
 
 # Clean up
