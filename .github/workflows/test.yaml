@@ -16,9 +16,7 @@ jobs:
           - color
           - promptflow
         baseImage:
-          - debian:latest
-          - ubuntu:latest
-          - mcr.microsoft.com/devcontainers/base:ubuntu
+          - mcr.microsoft.com/devcontainers/python:3.9
     steps:
       - uses: actions/checkout@v3
 
