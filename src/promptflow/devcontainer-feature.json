@@ -1,0 +1,62 @@
+{
+    "name": "Promptflow",
+    "id": "promptflow",
+    "version": "1.0.0",
+    "description": "Installs promptflow package and cli",
+    "options": {
+        "version": {
+            "type": "string",
+            "enum": [
+                "latest",
+                "1.4.0"
+            ],
+            "default": "latest",
+            "description": "Select or enter a version of promptflow to install"
+        },
+        "toolsVersion": {
+            "type": "string",
+            "enum": [
+                "latest",
+                "1.1.0"
+            ],
+            "default": "latest",
+            "description": "Select or enter a version of promptflow-tools to install"
+        },
+        "vectordbVersion": {
+            "type": "string",
+            "enum": [
+                "latest",
+                "0.2.3"
+            ],
+            "default": "latest",
+            "description": "Select or enter a version of vectordb to install"
+        },
+        "withVectorDB": {
+            "type": "boolean",
+            "default": false,
+            "description": "Install VectorDB packages for promptflow"
+        },
+        "extra": {
+            "type": "string",
+            "proposals": [
+                "",
+                "azure",
+                "azureml-serving",
+                "executable",
+                "pfs"
+            ],
+            "default": "",
+            "description": "Install extra dependencies for promptflow"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "prompt-flow.prompt-flow"
+            ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

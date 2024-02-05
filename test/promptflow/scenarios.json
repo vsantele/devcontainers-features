@@ -1,0 +1,10 @@
+{
+  "promptflow": {
+    "image": "mcr.microsoft.com/devcontainers/python:3.9",
+    "features": {
+      "promptflow": {
+        "version": "latest"
+      }
+    }
+  }
+}
