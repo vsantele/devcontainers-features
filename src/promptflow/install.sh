@@ -16,14 +16,6 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-# Check if python is installed
-if ! [ -x "$(command -v python3)" ]; then
-    echo 'Error: python3 is not installed.' >&1
-    # Install python3.9
-    apt-get update -y
-    apt-get install -y python3.9
-fi
-
 get_latest_version_pip()
 {
     local package_name=$1
